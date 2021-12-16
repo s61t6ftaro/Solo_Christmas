@@ -1,0 +1,130 @@
+/* -------------------- */
+/* base
+/* -------------------- */
+body{
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+}
+li{
+  list-style:none;
+}
+a{
+    text-decoration: none;
+    color:#fff;
+}
+img{
+  width:100%;
+  vertical-align: bottom;
+}
+
+
+
+/* -------------------- */
+/* header
+/* -------------------- */
+.header{
+    background-color: #1B1310;
+    color: #fff;
+    height:74px;
+    padding: 0 120px;
+    border-bottom:1px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-list{
+    /* navの横並び */
+    display: flex;
+}
+.nav-item{
+    /* メニューの右側に余白 */
+    margin-right: 55px;
+}
+
+.burger-btn{
+  display: none;
+}
+
+/* ------------------ */
+/* fv
+/* ------------------ */
+.fv{
+  height:90vh;
+  background-color:#141414;
+  background-image: url(../img/fv-bgi@2x.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.main-copy{
+   font-size: 50px;
+   color: #fff;
+   font-weight: bold;
+   border:2px solid #fff;
+   padding: 34px 42px;
+}
+
+/* ------------------ */
+/* about
+/* ------------------ */
+.section-title{
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-bottom: 70px;
+}
+h3{
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height:2;
+  letter-spacing: 0.1em;
+  margin-bottom: 40px;
+}
+.section-wrapper{
+  padding:100px 10% 50px; 
+  
+}
+
+
+
+
+@media screen and (max-width:768px){
+  /* ----------------------- */
+  /* base_sp
+  /* ----------------------- */
+  
+
+  /* ------------------ */
+  /* humberger-menu */
+  /* ------------------ */
+  .header{
+      padding: 0 5%;
+  }
+
+  
+  /* ------------------ */
+  /* fv */
+  /* ------------------ */
+  .main-copy{
+    font-size: 30px;
+  }
+  
+  /* ------------------ */
+  /* about */
+  /* ------------------ */
+  h3{
+      font-size: 20px;
+      margin-bottom: 30px;
+  }
+  .section-wrapper{
+      padding:100px 5% 50px;  
+  }
+
+
+}  
+  
+ 
