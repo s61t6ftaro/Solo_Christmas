@@ -7,73 +7,132 @@
 	padding:0;
 }
   body{
-    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
-  }
+    /* スクロールはみ出しさせない */
+    overflow: hidden;
+    margin: 0px;
+	padding: 0px;
+	color: #fff;	/*全体の文字色*/
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-size: 16px;	/*文字サイズ*/
+	line-height: 2;		/*行間*/
+	-webkit-text-size-adjust: none;
+}
+img{
+    width : 100%;
+    height: 100vh;
+    background-image: url("images/AdobeStock_103943945.jpeg");
+}
 
-  img{
-    width:100%;
-    vertical-align: bottom;
-  }
+
   /* *----------------------------
   * メニュー開閉ボタン
   *----------------------------*/ 
-  .menu-btn{
+  #toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 2;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #333;
-    color: #fff;
-  }
-  
-  /*----------------------------
-  * メニュー本体
-  *----------------------------*/
-  .menu{
+    top: 25px;
+    left: 25px;
+}
+
+#toggle-box {
+    position: relative;
+    width: 36px;
+    height: 32px;
+    cursor: pointer;
+}
+
+#toggle-box > span {
+  width: 100%;
+  height: 1px;
+  left: 0;
+  display: block;
+  background: #000;
+  position: absolute;
+  transition: transform .6s ease-in-out, top .5s ease, bottom .5s ease;
+}
+
+#toggle-box > span:nth-child(1) {
+    top: 0;
+}
+#toggle-box > span:nth-child(2) {
+    top: 50%;
+    transform: translatey(-50%);
+}
+#toggle-box > span:nth-child(3) {
+    bottom: 0;
+}
+
+#toggle {
+    z-index: 1000;
+}
+#main {
+    position: relative;  
+    z-index: 990;
+}
+
+#nav-content {
+    z-index: 900;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #000;
     position: fixed;
     top: 0;
-    right: 0;
-    z-index: 1;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #555;
-  }
-  .menu__item{
-    width: 100%;
-    height: auto;
-    padding: .5em 1em;
+    left: 0;
+    text-align: left;
+    transform: translateX(-100%);
+    transition:  transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+#nav-content ul {
+  list-style: none;
+}
+
+.menu_title{
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 10px;
     text-align: center;
-    color: #fff;
-    box-sizing: border-box;
-  }
-  
-  /*----------------------------
-  * アニメーション部分
-  *----------------------------*/
-  
-  /* アニメーション前のメニューの状態 */
-  .menu{
-    pointer-events: none;
-    opacity: 0;
-    transform-origin: center;
-    transform: scale(.5);
-    transition: all .3s ease;
-  }
-  /* アニメーション後のメニューの状態 */
-  .menu.is-active{
-    pointer-events: auto;
-    opacity: 1;
-    transform: scale(1.0);
-  }
+}
+
+#nav-content a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: opacity .6s ease;
+}
+
+#nav-content a:hover {
+  opacity: 0.6;
+}
+
+.is-open {
+    overflow: hidden;
+}
+
+.is-open #toggle-box > span {
+    background: #000;
+}
+
+.is-open #toggle-box > span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg) translatey(-50%);
+}
+
+.is-open #toggle-box > span:nth-child(2) {
+  width: 0;
+}
+
+.is-open #toggle-box > span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-45deg) translatey(-50%);
+}
+
+.is-open #nav-content {
+  z-index: 999;
+  transform: translateX(0);
+}
     
   @media screen and (max-width:768px){
     /* ----------------------- */
