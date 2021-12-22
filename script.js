@@ -14,8 +14,8 @@ function ChristmasDate() {
   let diffMSec = dnumTarget - dnumNow;
   let diffDays = diffMSec / ( 1000 * 60 * 60 * 24 );
   // 小数点以下を切り上げる
-  // let showDays = Math.ceil( diffDays ); 
-  let showDays = 0;
+
+  let showDays = Math.ceil( diffDays );
   if(showDays == 0){
     $("#christmasCount").html("MerryChristmas!!");
   }else{
