@@ -33,10 +33,10 @@ $(function() {
 // 画像のフェードアウト/イン
 $(function() {				
   $("button").click(function(){
+    music.play();
     $('.top_cake_img').fadeOut(3000,fade_out);
     function fade_out(){    
         $(".disap_cake_img").fadeIn(3000);
-        music.play();
       }
     });
   });
