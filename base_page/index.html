@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
-			<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>ハンバーガーメニューの練習</title>
-			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/css/bootstrap.min.css"></link>
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
-			<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-			<link rel="stylesheet" href="style.css">
-			
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ソロクリスマス</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
 	</head>
+	
 	<body>
+		<!-- スクリプトファイル読み込み -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="script.js"></script>
 		<main>
-			<img src="images/AdobeStock_103943945.jpeg">    
-			<!-- header -->
+			<!-- メイン背景 -->
+			<div class="top_cake_img"></div>
+			<div class="disap_cake_img"></div>
 			<header>
 				<div id="toggle">
+					<!-- ハンバーガーメニュー -->
 					<div id="toggle-box">
 						<span></span>
 						<span></span>
 						<span></span>
 					</div>
-			</div>
+				</div>
 			
-			<div id="nav-content">
-				<nav>
-					<ul>
-						<li class="menu_title">MENU</li>
-						<li><a href="#">ホーム</a></li>
-						<li><a href="#">カウントダウン</a></li>
-						<li><a href="#">ケーキを変える</a></li>
-						<li><a href="#">設定</a></li>
-					</ul>
-				</nav>
-			</div>
+				<div id="nav-content">
+					<nav>
+						<ul>
+							<li class="menu_title">MENU</li>
+							<li><span class="reset">ホーム</a></li>
+								<li>
+									<span>カウントダウン</span>
+									<div class="toggle_switch">
+										<span>クリスマス</span>
+										<label for="cb_toggle_switch"></label>
+										<input type="checkbox" name="xxx" id="cb_toggle_switch">
+									</div>						
+								</li>
+							<!-- <li><a href="#">ケーキを変える</a></li> -->
+						</ul>
+					</nav>
+				</div>
 
 			</header>
-			<!-- //header -->
-		<div class="cristmas_bar">
-			<span>クリスマスまであと日</span>
-		</div>
-			
+			<div class="change_img">
+				<button class="fire btn btn-primary btn-lg">Foo</button>
+			</div>
+			<div class="cristmas_bar">
+				<span id="christmasCount"></span>
+			</div>
 		</main>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-			<script src="script.js"></script>
 	</body>
 </html>
